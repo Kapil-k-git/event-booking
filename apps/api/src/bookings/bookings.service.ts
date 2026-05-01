@@ -19,7 +19,6 @@ export class BookingsService {
         .select()
         .from(schema.events)
         .where(eq(schema.events.id, dto.eventId))
-        // .where(sql`${schema.events.id} = ${dto.eventId}`)
         .for("update");
 
       if (!event) throw new BadRequestException("Event not found");
@@ -75,5 +74,18 @@ export class BookingsService {
       .innerJoin(schema.events, eq(schema.bookings.eventId, schema.events.id))
       .where(eq(schema.bookings.userEmail, email))
       .orderBy(sql`${schema.bookings.bookedAt} DESC`);
+  }
+
+  async findById(bookingId: string) {
+    const [booking] = await this.db
+      .select()
+      .from(schema.bookings)
+      .where(eq(schema.bookings.id, bookingId));
+
+    if (!booking) {
+      throw new BadRequestException("Booking not found");
+    }
+
+    return booking;
   }
 }
