@@ -1,4 +1,4 @@
-'use server'
+"use server";
 import { redirect } from "next/navigation";
 
 export async function createBooking(formData: FormData) {
@@ -9,8 +9,8 @@ export async function createBooking(formData: FormData) {
   };
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
 

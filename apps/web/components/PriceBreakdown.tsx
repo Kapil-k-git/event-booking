@@ -1,5 +1,10 @@
-// components/PriceBreakdown.tsx
-export function PriceBreakdown({ basePrice, adjustments }: { basePrice: number, adjustments: any[] }) {
+export function PriceBreakdown({
+  basePrice,
+  adjustments,
+}: {
+  basePrice: number;
+  adjustments: any[];
+}) {
   return (
     <div className="space-y-2 text-sm">
       <div className="flex justify-between text-gray-500">

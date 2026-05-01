@@ -66,7 +66,6 @@ export class BookingsService {
         quantity: schema.bookings.quantity,
         pricePaid: schema.bookings.pricePaid,
         createdAt: schema.bookings.bookedAt,
-        // Join with events to show the name of what they bought
         eventName: schema.events.name,
         eventDate: schema.events.eventDate,
       })

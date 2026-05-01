@@ -9,7 +9,6 @@ export interface PricingMetrics {
 }
 
 export class PricingEngine {
-  // Weights loaded from Environment Variables
   private readonly weights = {
     time: parseFloat(process.env.WEIGHT_TIME || "1.0"),
     demand: parseFloat(process.env.WEIGHT_DEMAND || "1.0"),
@@ -33,8 +32,7 @@ export class PricingEngine {
     );
 
     let timeAdj = 0;
-    if (daysUntilEvent <= 1)
-      timeAdj = 0.5; // Tomorrow: +50%
+    if (daysUntilEvent <= 1) timeAdj = 0.5;
     else if (daysUntilEvent <= 7) timeAdj = 0.2; // Within 7 days: +20%
 
     totalAdjustment += timeAdj * this.weights.time;
@@ -55,7 +53,7 @@ export class PricingEngine {
     }
     totalAdjustment += inventoryAdj * this.weights.inventory;
 
-    // 4. Final Calculation: currentPrice = basePrice * (1 + sum of weighted adjustments)
+    // 4. Final Calculation
     let finalPrice = basePrice * (1 + totalAdjustment);
 
     // 5. Apply Floor and Ceiling

@@ -8,7 +8,7 @@ export default function Loading() {
         </div>
         <div className="h-64 w-full skeleton rounded-xl shadow-sm" />
       </div>
-      
+
       <div className="h-100 w-full skeleton rounded-xl shadow-sm sticky top-24" />
     </div>
   );

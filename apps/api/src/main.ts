@@ -10,7 +10,7 @@ async function bootstrap() {
       whitelist: true,
       transform: true,
       transformOptions: {
-        enableImplicitConversion: true, // This helps with Date/Number conversion
+        enableImplicitConversion: true,
       },
     }),
   );

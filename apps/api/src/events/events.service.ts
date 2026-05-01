@@ -54,7 +54,6 @@ export class EventsService {
       priceCeiling: parseFloat(event.priceCeiling),
     });
 
-    // 4. Return enriched response
     return {
       ...event,
 

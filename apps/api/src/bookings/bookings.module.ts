@@ -6,10 +6,7 @@ import { EventsModule } from "../events/events.module";
 import { DbModule } from "../db/db.module";
 
 @Module({
-  imports: [
-    DbModule,
-    EventsModule, // Allows access to EventsService
-  ],
+  imports: [DbModule, EventsModule],
   controllers: [BookingsController],
   providers: [BookingsService],
 })

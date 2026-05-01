@@ -3,7 +3,7 @@ export interface Event {
   name: string;
   description: string;
   venue: string;
-  eventDate: string; // ISO date string
+  eventDate: string;
   totalTickets: number;
   bookedTickets: number;
   basePrice: string;
@@ -11,8 +11,8 @@ export interface Event {
   priceFloor: string;
   priceCeiling: string;
   pricingRules: PricingRules;
-  createdAt: string; // ISO date string
-  updatedAt: string; // ISO date string
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface PricingRules {

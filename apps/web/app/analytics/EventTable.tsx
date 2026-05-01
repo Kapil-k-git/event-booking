@@ -1,5 +1,3 @@
-// app/analytics/EventTable.tsx
-
 export default function EventTable({ events }: { events: any[] }) {
   return (
     <div className="bg-white border rounded-xl overflow-hidden shadow-sm">

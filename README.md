@@ -142,22 +142,6 @@ This starts:
 
 ---
 
-# Typical Local URLs
-
-### Web:
-
-```bash
-http://localhost:3000
-```
-
-### API:
-
-```bash
-http://localhost:3001
-```
-
----
-
 # Common Development Commands
 
 ## Install all dependencies:
@@ -180,7 +164,10 @@ pnpm dev
 
 ## Run tests:
 
+Move to the API app directory first:
+
 ```bash
+cd apps/api
 pnpm test
 ```
 
@@ -188,38 +175,6 @@ pnpm test
 
 ```bash
 pnpm test:cov
-```
-
----
-
-# Monorepo Structure
-
-```txt
-apps/
- ├── api/        # NestJS backend
- └── web/        # Next.js frontend
-
-packages/
- ├── database/   # Drizzle ORM + PostgreSQL
- └── typescript-config/
-```
-
----
-
-# Troubleshooting
-
-## Workspace dependency issues:
-
-Always run commands from the root using:
-
-```bash
-pnpm
-```
-
-Do **not** use:
-
-```bash
-npm install
 ```
 
 ---
@@ -233,24 +188,5 @@ Ensure:
 * Seed script has been executed
 
 ---
-
-# Notes
-
-* Use **pnpm** for all package management
-* Node.js version **24** is required
-* Ensure `.env` files are configured before running dev servers
-* Dynamic pricing weights must remain within `0–1`
-
----
-
-# Summary
-
-### Initial setup:
-
-```bash
-pnpm install
-pnpm --filter @repo/database db:seed
-pnpm dev
-```
 
 Your full Event Ticketing Platform should now be running locally.

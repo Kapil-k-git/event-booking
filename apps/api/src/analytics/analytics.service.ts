@@ -1,6 +1,5 @@
 import { Injectable, Inject, NotFoundException } from "@nestjs/common";
 import { DRIZZLE } from "../db/db.module";
-// import * as schema from "../../../../packages/database/src/index";
 import * as schema from "@repo/database";
 import { eq, sql } from "drizzle-orm";
 
