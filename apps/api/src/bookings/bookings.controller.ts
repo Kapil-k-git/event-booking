@@ -24,10 +24,10 @@ export class BookingsController {
     @Query("eventId") eventId?: string,
     @Query("email") email?: string,
   ) {
-    console.log("my-bookings api controller");
     // If email is provided, return user history
     if (email) {
-      return this.bookingsService.findByUser(email);
+      const decodedEmail = decodeURIComponent(email);
+      return this.bookingsService.findByUser(decodedEmail);
     }
 
     // If eventId is provided, return event bookings
