@@ -30,7 +30,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
           <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
             <h1 className="text-3xl font-bold tracking-tight text-slate-900">
-              Ticketing System
+              <Link href="/">Ticketing System</Link>
             </h1>
 
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">

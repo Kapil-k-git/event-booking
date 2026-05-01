@@ -1,4 +1,3 @@
-// app/bookings/success/page.tsx
 export default async function SuccessPage({ searchParams }: { searchParams: { id: string } }) {
   const bookingRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings/${searchParams.id}`);
   const booking = await bookingRes.json();
