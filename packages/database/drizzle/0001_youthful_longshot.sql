@@ -1,0 +1,2 @@
+ALTER TABLE "events" ALTER COLUMN "pricing_rules" SET DEFAULT '{"timeRules":[{"daysOut":30,"adjustment":0},{"daysOut":7,"adjustment":0.2},{"daysOut":1,"adjustment":0.5}],"demandThreshold":10,"demandAdjustment":0.15,"inventoryThreshold":0.2,"inventoryAdjustment":0.25,"enabledRules":["time","demand","inventory"]}'::jsonb;--> statement-breakpoint
+ALTER TABLE "events" ALTER COLUMN "pricing_rules" SET NOT NULL;
